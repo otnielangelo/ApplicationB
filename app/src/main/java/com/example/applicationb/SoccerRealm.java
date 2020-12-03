@@ -3,7 +3,7 @@ package com.example.applicationb;
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
-public class MovieRealm extends RealmObject {
+public class SoccerRealm extends RealmObject {
     @PrimaryKey
     private Integer id;
     private String judul;

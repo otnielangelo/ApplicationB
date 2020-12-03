@@ -42,12 +42,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.DatakuViewHolder> {
                 public void onBindViewHolder(final DatakuViewHolder holder, final int position) {
                     holder.txtNama.setText(dataList.get(position).getOriginal_title());
                     holder.txtNpm.setText(dataList.get(position).getOverview());
-                    Log.d("makananku", "onBindViewHolder: "+dataList.get(position).getPoster_path());
+                    Log.d("makananku", "onBindViewHolder: "+dataList.get(position));
                     Glide.with(holder.itemView)
-                            .load(dataList.get(position).getPoster_path())
+                            .load(dataList.get(position))
                             .override(Target.SIZE_ORIGINAL)
                             .placeholder(R.mipmap.ic_launcher)
-                            .into(holder.ivprofile);
+                    ;
                 }
                 @Override
                 public int getItemCount() {
@@ -61,7 +61,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.DatakuViewHolder> {
                                 super(itemView);
                                 viewku=itemView;
                                 card = (CardView) itemView.findViewById(R.id.cardku);
-                                ivprofile = (ImageView) itemView.findViewById(R.id.ivprofile);
                                 txtNama = (TextView) itemView.findViewById(R.id.tvname);
                                 txtNpm = (TextView) itemView.findViewById(R.id.tvdesc);
                                 itemView.setOnCreateContextMenuListener(this);
