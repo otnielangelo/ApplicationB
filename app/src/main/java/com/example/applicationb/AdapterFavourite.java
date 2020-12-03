@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -60,7 +61,8 @@ public class AdapterFavourite extends RecyclerView.Adapter<AdapterFavourite.Data
                 .load(dataList.get(position).getPath())
                 //.override(Target.SIZE_ORIGINAL)
                 .apply(new RequestOptions().override(600, 200))
-                .placeholder(R.mipmap.ic_launcher);
+                .placeholder(R.mipmap.ic_launcher)
+                .into(holder.ivprofile);
     }
     @Override
     public int getItemCount() {
@@ -69,6 +71,7 @@ public class AdapterFavourite extends RecyclerView.Adapter<AdapterFavourite.Data
     public class DatakuViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{
         private TextView txtNama, txtNpm;
         CardView card;
+        ImageView ivprofile;
 
         public DatakuViewHolder(View itemView) {
             super(itemView);
