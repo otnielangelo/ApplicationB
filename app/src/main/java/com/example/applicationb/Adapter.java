@@ -1,5 +1,4 @@
 package com.example.applicationb;
-import android.annotation.SuppressLint;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -10,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -39,7 +39,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.DatakuViewHolder> {
                 return new DatakuViewHolder(view);
             }
 
-            @SuppressLint("CheckResult")
+
             @Override
                 public void onBindViewHolder(final DatakuViewHolder holder, final int position) {
                     holder.txtNama.setText(dataList.get(position).getOriginal_title());
@@ -49,7 +49,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.DatakuViewHolder> {
                             .load(dataList.get(position))
                             .override(Target.SIZE_ORIGINAL)
                             .placeholder(R.mipmap.ic_launcher)
-                    ;
+                            .into(holder.ivprofile);
                 }
                 @Override
                 public int getItemCount() {

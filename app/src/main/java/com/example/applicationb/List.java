@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ public class List extends AppCompatActivity {
     RecyclerView recyclerView;
     Adapter adapter;
     ArrayList<Model> DataArrayList; //kit add kan ke adapter
+    ImageView pic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,7 @@ public class List extends AppCompatActivity {
         DataArrayList = new ArrayList<>();
         Model data1 = new Model();
         data1.setOriginal_title("Pertandingan");
+        data1.setPoster_path("https://sm.imgix.net/20/44/juvxivbar.jpg?w=640&h=800&auto=compress,format&fit=clip");
         data1.setAdult(false);
         data1.setOverview("Deskripsi");
         data1.setVote_count(100);
@@ -101,6 +104,7 @@ public class List extends AppCompatActivity {
                                 modelku.setOriginal_title(jsonObject.getString("original_title"));
                                 modelku.setOverview(jsonObject.getString("overview"));
                                 modelku.setRelease_date(jsonObject.getString("release_date"));
+                                modelku.setPoster_path("https://sm.imgix.net/20/44/juvxivbar.jpg?w=640&h=800&auto=compress,format&fit=clip"+jsonObject.getString("poster_path"));
                                 modelku.setAdult(jsonObject.getBoolean("adult"));
                                 modelku.setVote_count(jsonObject.getInt("vote_count"));
                                 DataArrayList.add(modelku);
@@ -115,6 +119,7 @@ public class List extends AppCompatActivity {
                                     intent.putExtra("judul",soccer.original_title);
                                     intent.putExtra("date",soccer.release_date);
                                     intent.putExtra("deskripsi",soccer.overview);
+                                    intent.putExtra("path",soccer.poster_path);
                                     startActivity(intent);
                                     Toast.makeText(List.this, ""+position, Toast.LENGTH_SHORT).show();
                                 }
