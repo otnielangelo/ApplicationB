@@ -1,4 +1,5 @@
 package com.example.applicationb;
+import android.annotation.SuppressLint;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -38,6 +39,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.DatakuViewHolder> {
                 return new DatakuViewHolder(view);
             }
 
+            @SuppressLint("CheckResult")
             @Override
                 public void onBindViewHolder(final DatakuViewHolder holder, final int position) {
                     holder.txtNama.setText(dataList.get(position).getOriginal_title());
