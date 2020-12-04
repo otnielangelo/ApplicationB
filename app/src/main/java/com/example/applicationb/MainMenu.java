@@ -1,11 +1,11 @@
 package com.example.applicationb;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 public class MainMenu extends AppCompatActivity {
 
@@ -24,5 +24,11 @@ public class MainMenu extends AppCompatActivity {
             }
         });
         menu2 = (CardView)findViewById(R.id.menu2);
+        menu2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ListFavourite.class));
+            }
+        });
     }
 }
