@@ -5,13 +5,13 @@ import io.realm.annotations.PrimaryKey;
 
 public class SoccerRealm extends RealmObject {
     @PrimaryKey
-    private Integer id;
-    private String judul;
-    private String desc;
-    private String releaseDate;
-    private String path;
+    int id;
+    String judul;
+    String desc;
+    String releaseDate;
+    String path;
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 

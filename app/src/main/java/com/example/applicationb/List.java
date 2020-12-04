@@ -1,4 +1,5 @@
 package com.example.applicationb;
+
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -42,38 +43,6 @@ public class List extends AppCompatActivity {
         recyclerView.setVisibility(View.VISIBLE);
         //addData();
         addDataOnline();
-    }
-    void addData() {
-        //offline, isi data offline dulu
-        DataArrayList = new ArrayList<>();
-        Model data1 = new Model();
-        data1.setOriginal_title("Pertandingan");
-        data1.setPoster_path("https://sm.imgix.net/20/44/juvxivbar.jpg?w=640&h=800&auto=compress,format&fit=clip");
-        data1.setAdult(false);
-        data1.setOverview("Deskripsi");
-        data1.setVote_count(100);
-        data1.setRelease_date("01-01-2020");
-        DataArrayList.add(data1);
-
-
-        adapter = new Adapter(DataArrayList, new Adapter.Callback() {
-            @Override
-            public void onClick(int position) {
-
-            }
-
-            @Override
-            public void test() {
-
-            }
-        });
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(List.this);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
-
-        //get data online
-
-
     }
 
     void addDataOnline(){

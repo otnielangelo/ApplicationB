@@ -10,25 +10,13 @@ public class Model {
     String overview;
     int vote_count;
 
-    public String getOriginal_title() {
+    public String getOriginal_title() { return original_title; }
 
-        return original_title;
-    }
+    public void setOriginal_title(String original_title) { this.original_title = original_title; }
 
-    public void setOriginal_title(String original_title) {
+    public String getRelease_date() { return release_date; }
 
-        this.original_title = original_title;
-    }
-
-    public String getRelease_date() {
-
-        return release_date;
-    }
-
-    public void setRelease_date(String release_date) {
-
-        this.release_date = release_date;
-    }
+    public void setRelease_date(String release_date) { this.release_date = release_date; }
 
     public String getPoster_path() {
         return poster_path;
@@ -38,36 +26,18 @@ public class Model {
         this.poster_path = poster_path;
     }
 
-    public Boolean getAdult() {
+    public Boolean getAdult() { return adult; }
 
-        return adult;
+    public void setAdult(Boolean adult) { this.adult = adult; }
+
+    public String getOverview() { return overview; }
+
+    public void setOverview(String overview) { this.overview = overview; }
+
+    public int getVote_count() { return vote_count; }
+
+    public void setVote_count(int vote_count) { this.vote_count = vote_count;
     }
-
-    public void setAdult(Boolean adult) {
-
-        this.adult = adult;
-    }
-
-    public String getOverview() {
-
-        return overview;
-    }
-
-    public void setOverview(String overview) {
-
-        this.overview = overview;
-    }
-
-    public int getVote_count() {
-
-        return vote_count;
-    }
-
-    public void setVote_count(int vote_count) {
-
-        this.vote_count = vote_count;
-    }
-
 
     public void setId(int id) {
     }

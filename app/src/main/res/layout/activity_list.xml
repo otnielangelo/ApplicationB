@@ -9,9 +9,16 @@
     tools:context=".List">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:visibility="gone"
         android:id="@+id/rvdata"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+    <ImageView
+        android:layout_marginTop="50dp"
+        android:layout_width="276dp"
+        android:layout_height="278dp"
+        android:layout_gravity="center"
+        android:src="@mipmap/nodata"/>
     <TextView
         android:id="@+id/tvnodata"
         android:layout_gravity="center"

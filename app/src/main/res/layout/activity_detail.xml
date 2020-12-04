@@ -7,7 +7,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Detail">
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
     <TextView
         android:textSize="20sp"
         android:layout_margin="20dp"
@@ -39,5 +45,6 @@
         android:text="Bookmark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-
+            </LinearLayout>
+    </ScrollView>
 </LinearLayout>

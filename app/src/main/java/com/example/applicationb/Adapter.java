@@ -1,4 +1,5 @@
 package com.example.applicationb;
+
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.Target;
 
 import java.util.ArrayList;
+
 public class Adapter extends RecyclerView.Adapter<Adapter.DatakuViewHolder> {
     private ArrayList<Model> dataList;
     private Callback callback;
@@ -59,10 +61,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.DatakuViewHolder> {
                         private TextView txtNama, txtNpm;
                         CardView card;
                         ImageView ivprofile;
-        public DatakuViewHolder(View itemView) {
+                        public DatakuViewHolder(View itemView) {
                                 super(itemView);
                                 viewku=itemView;
                                 card = (CardView) itemView.findViewById(R.id.cardku);
+                                ivprofile = (ImageView) itemView.findViewById(R.id.ivprofile);
                                 txtNama = (TextView) itemView.findViewById(R.id.tvname);
                                 txtNpm = (TextView) itemView.findViewById(R.id.tvdesc);
                                 itemView.setOnCreateContextMenuListener(this);

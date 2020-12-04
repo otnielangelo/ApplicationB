@@ -4,6 +4,7 @@ import android.util.Log;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
+
 public class RealmHelper {
 
     Realm realm;
@@ -43,5 +44,12 @@ public class RealmHelper {
     }
 
     public void delete(Integer id) {
+        final RealmResults<SoccerRealm> model = realm.where(SoccerRealm.class).equalTo("id", id).findAll();
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                model.deleteFromRealm(0);
+            }
+        });
     }
 }

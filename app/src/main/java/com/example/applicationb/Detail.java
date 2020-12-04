@@ -3,7 +3,9 @@ package com.example.applicationb;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,11 +23,13 @@ public class Detail extends AppCompatActivity {
     String title;
     String date;
     String deskripsi;
+    String poster;
     String path;
-    String id;
+    int id;
 
     TextView tvjudul;
     TextView tvdesc;
+    ImageView ivposter;
     Button btnbookmark;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,13 +38,15 @@ public class Detail extends AppCompatActivity {
         extras = getIntent().getExtras();
         tvjudul = (TextView) findViewById(R.id.tvjudul);
         tvdesc = (TextView) findViewById(R.id.txtdeskripsi);
+        ivposter = (ImageView) findViewById(R.id.ivposter);
         btnbookmark = (Button) findViewById(R.id.btnbookmark);
 
         if (extras != null) {
             title = extras.getString("judul");
-            id = extras.getString("id");
+            id = extras.getInt("id");
             date = extras.getString("date");
             deskripsi = extras.getString("deskripsi");
+            poster = extras.getString("poster");
             path = extras.getString("path");
             tvjudul.setText(title);
             tvdesc.setText(deskripsi);
@@ -48,7 +54,9 @@ public class Detail extends AppCompatActivity {
                     .load(path)
                     .override(Target.SIZE_ORIGINAL)
                     .placeholder(R.mipmap.ic_launcher)
-            ;
+                    .into(ivposter);
+        }else {
+            Toast.makeText(this, "null", Toast.LENGTH_SHORT).show();
         }
             Realm.init(Detail.this);
             RealmConfiguration configuration = new RealmConfiguration.Builder().build();
